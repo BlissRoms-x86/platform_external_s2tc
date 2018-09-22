@@ -11,4 +11,8 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_MODULE := libtxc_dxtn
 
+LOCAL_CFLAGS := \
+	-Wno-unused-parameter \
+        -Wno-unused-function
+
 include $(BUILD_SHARED_LIBRARY)
