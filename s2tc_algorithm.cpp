@@ -561,7 +561,7 @@ namespace
 	template <class T>
 	struct s2tc_evaluate_colors_result_null_t
 	{
-		inline void add(int l, T a)
+		inline void add(int, T)
 		{
 		}
 	};
