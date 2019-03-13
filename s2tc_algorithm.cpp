@@ -51,17 +51,9 @@ namespace
 	{
 		signed char r, g, b;
 	};
-	inline color_t make_color_t()
-	{
-		return (color_t) {0, 0, 0};
-	}
 	inline color_t make_color_t(signed char r_, signed char g_, signed char b_)
 	{
 		return (color_t) {r_, g_, b_};
-	}
-	inline color_t make_color_t(int i)
-	{
-		return (color_t) {(signed char)(i >> 3), (signed char)(i >> 2), (signed char)(i >> 3)};
 	}
 	inline bool operator==(const color_t &a, const color_t &b)
 	{
@@ -487,26 +479,10 @@ namespace
 	{
 		return comp;
 	}
-	template<> inline int refine_component_encode<color_dist_srgb>(int comp)
-	{
-		return comp * comp;
-	}
-	template<> inline int refine_component_encode<color_dist_srgb_mixed>(int comp)
-	{
-		return comp * comp;
-	}
 
 	template<ColorDistFunc ColorDist> inline int refine_component_decode(int comp)
 	{
 		return comp;
-	}
-	template<> inline int refine_component_decode<color_dist_srgb>(int comp)
-	{
-		return sqrtf(comp) + 0.5f;
-	}
-	template<> inline int refine_component_decode<color_dist_srgb_mixed>(int comp)
-	{
-		return sqrtf(comp) + 0.5f;
 	}
 
 	template <class T, class Big, int scale_l>
