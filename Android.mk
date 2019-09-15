@@ -13,6 +13,9 @@ LOCAL_MODULE := libtxc_dxtn
 
 LOCAL_CFLAGS := \
 	-Wno-unused-parameter \
-        -Wno-unused-function
+    -Wno-unused-function \
+    -Wno-error=implicit-fallthrough
 
 include $(BUILD_SHARED_LIBRARY)
+
+
