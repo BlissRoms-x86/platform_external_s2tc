@@ -9,6 +9,9 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := \
 	external/mesa/include \
 
+LOCAL_CFLAGS := \
+	-Wno-implicit-fallthrough
+
 LOCAL_MODULE := libtxc_dxtn
 
 include $(BUILD_SHARED_LIBRARY)
